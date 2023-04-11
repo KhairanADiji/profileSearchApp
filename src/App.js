@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import data from "./components/data";
+import "./styles.css"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App(props) {
+    const [search, setNewSearch] = useState('')
+    function handleSearchChange(e){
+        setNewSearch(e.target.value);
+    }
+    const filtered = !search ? data : data.filter(item => item.firstName.toLowerCase().includes(search.toLowerCase()));
+    return(
+        <div className="container">
+            <input 
+                className="input"
+                placeholder="Search by firstname..."
+                type="text"
+                value={search}
+                onChange={handleSearchChange}
+                />
+            <main>
+                {filtered.map(item => {
+                    return (
+                        <div className="profile-container">
+                            <img src={item.picture} alt="ProfileImage"/>
+                            <div>
+                                <p>{item.id}</p>
+                                <h4>{item.title}. {item.firstName} {item.lastName}</h4>
+                            </div>
+                        </div>
+                    )
+                })}
+            </main>
+        </div>
+    )
 }
-
-export default App;
