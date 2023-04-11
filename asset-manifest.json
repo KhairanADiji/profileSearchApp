@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/profileSearchApp/static/css/main.2637cca5.css",
+    "main.js": "/profileSearchApp/static/js/main.72d7d82e.js",
+    "index.html": "/profileSearchApp/index.html",
+    "main.2637cca5.css.map": "/profileSearchApp/static/css/main.2637cca5.css.map",
+    "main.72d7d82e.js.map": "/profileSearchApp/static/js/main.72d7d82e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2637cca5.css",
+    "static/js/main.72d7d82e.js"
+  ]
+}
